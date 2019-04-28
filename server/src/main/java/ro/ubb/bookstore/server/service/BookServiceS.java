@@ -48,6 +48,7 @@ public class BookServiceS implements BookService
             book1.setAuthor(book.getAuthor());
             book1.setGenre(book.getGenre());
             book1.setYear(book.getYear());
+            bookRepository.save(book1);
 
             log.debug("updateBook --- book updated? --- book = {}",book1);
         });

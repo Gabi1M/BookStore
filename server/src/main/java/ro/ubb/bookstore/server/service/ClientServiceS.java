@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ro.ubb.bookstore.common.domain.Client;
 import ro.ubb.bookstore.common.service.ClientService;
 import ro.ubb.bookstore.server.repository.ClientRepository;
@@ -49,6 +50,7 @@ public class ClientServiceS implements ClientService
             client1.setName(client.getName());
             client1.setGender(client.getGender());
             client1.setAge(client.getAge());
+            clientRepository.save(client1);
 
             log.debug("updateClient --- client updated? --- client = {}",client1);
         }));
